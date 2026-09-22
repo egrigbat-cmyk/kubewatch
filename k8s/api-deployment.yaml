@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: kubewatch-api
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: kubewatch
+
+  template:
+    metadata:
+      labels:
+        app: kubewatch
+
+
+    spec:
+      containers:
+        - name: api
+          image: kubewatch-api:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
