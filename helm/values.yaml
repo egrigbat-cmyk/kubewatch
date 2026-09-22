@@ -1,0 +1,34 @@
+api:
+  replicaCount: 1
+
+  image:
+    repository: kubewatch-api
+    tag: latest
+    pullPolicy: Never
+
+  service:
+    type: ClusterIP
+    port: 8000
+    targetPort: 8000
+
+worker:
+  replicaCount: 1
+
+  image:
+    repository: kubewatch-worker
+    tag: latest
+    pullPolicy: Never
+
+redis:
+  image:
+    repository: redis
+    tag: "7"
+    pullPolicy: IfNotPresent
+
+ingress:
+  enabled: true
+  className: nginx
+  path: /
+  service:
+    name: kubewatch-service
+    port: 8000
