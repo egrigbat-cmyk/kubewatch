@@ -34,8 +34,6 @@ After the load stopped:
 `8 → 2 pods`
 
 
-
-
 kubewatch/
 ├── helm/
 │   ├── templates/
@@ -56,3 +54,5 @@ kubewatch/
 │   └── worker/
 ├── docker-compose.yml
 └── README.md
+
+
