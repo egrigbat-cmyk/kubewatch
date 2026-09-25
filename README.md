@@ -34,25 +34,8 @@ After the load stopped:
 `8 → 2 pods`
 
 
-kubewatch/
-├── helm/
-│   ├── templates/
-│   └── values.yaml
-├── k8s/
-│   ├── api-deployment.yaml
-│   ├── api-service.yaml
-│   ├── api-ingress.yaml
-│   ├── api-alert.yaml
-│   ├── api-servicemonitor.yaml
-│   ├── redis-deployment.yaml
-│   ├── redis-service.yaml
-│   └── worker-deployment.yaml
-├── loadtest/
-│   └── locustfile.py
-├── services/
-│   ├── api/
-│   └── worker/
-├── docker-compose.yml
-└── README.md
+For Docker
+docker compose up --build
 
-
+For kubernetes
+helm upgrade --install kubewatch ./helm --set api.image.tag=v2
