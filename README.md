@@ -34,8 +34,8 @@ After the load stopped:
 `8 → 2 pods`
 
 
-For Docker
+For Docker: 
 docker compose up --build
 
-For kubernetes
+For kubernetes: 
 helm upgrade --install kubewatch ./helm --set api.image.tag=v2
