@@ -1,4 +1,4 @@
-cat > README.md <<'EOF'
+
 # Kubewatch
 
 A Python microservices project deployed on Kubernetes with monitoring, alerting and autoscaling.
