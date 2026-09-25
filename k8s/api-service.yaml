@@ -3,13 +3,16 @@ kind: Service
 
 metadata:
   name: kubewatch-service
+  labels:
+    app: kubewatch
 
 spec:
   selector:
     app: kubewatch
 
   ports:
-    - port: 8000
+    - name: http
+      port: 8000
       targetPort: 8000
 
   type: NodePort

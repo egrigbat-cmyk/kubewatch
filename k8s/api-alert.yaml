@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: kubewatch-api-alerts
+  namespace: monitoring
+  labels:
+    release: monitoring
+spec:
+  groups:
+    - name: kubewatch-api
+      rules:
+        - alert: KubewatchAPIDown
+          expr: kube_deployment_status_replicas_available{namespace="default", deployment="kubewatch-api"} < 1
+          for: 1m
+          labels:
+            severity: critical
+          annotations:
+            summary: "Kubewatch API is down"
+            description: "No available Kubewatch API replicas have been detected for more than 1 minute."
